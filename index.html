@@ -1,101 +1,24 @@
-<!DOCTYPE html>
-<html lang="id">
-
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Game Assistant</title>
-    <link rel="stylesheet" href="assets/style/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+<title>LED ON/OFF</title>
 </head>
 
 <body>
-    <header class="neon-border">
-        <div class="title">
-            <div class="logo">
-                <img src="assets/image/dice-logo.png" class="responsive-logo" alt="logo" />
-            </div>
-            <h1>Game Assistant</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#dice">Dadu</a></li>
-                <li><a href="#coin">Koin</a></li>
-                <li><a href="#about-us">Pembuat</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="flex-container-row base-content neon-border">
-            <div class="flex-container-column article">
-                <article>
-                    <span class="anchor" id="dice"></span>
-                    <h2>Dadu</h2>
-                    <div class="flex-container-row">
-                        <div class="content neon-border">
-                            <div id="dice-box" class="box">
-                                <img id="dices1" src="assets/image/dice1.png" alt="dadu" class="responsive-img">
-                            </div>
-                            <div class="box">
-                                <div class="button responsive-button" onclick="roll('dice')">
-                                    <p><b>Kocok</b></p>
-                                </div>
-                                <div class="button responsive-button" onclick="add('dice')">
-                                    <p><b>Tambah</b></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="caption neon-border">
-                            <p>Bisa buat monopoli, ular tangga, dan ritual per-gachaan lainnya.</p>
-                            <p> <b>Pliss jangan buat judi !!</b></p>
-                        </div>
-                    </div>
-                </article>
-                <article>
-                    <span class="anchor" id="coin"></span>
-                    <h2>Koin</h2>
-                    <div class="flex-container-row">
-                        <div class="content neon-border">
-                            <div id="coin-box" class="box">
-                                <img id="coins1" src="assets/image/coin1.png" alt="coin" class="responsive-img">
-                            </div>
-                            <div class="box">
-                                <div class="button" onclick="roll('coin')">
-                                    <p><b>Lempar</b></p>
-                                </div>
-                                <div class="button" onclick="add('coin')">
-                                    <p><b>Tambah</b></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="caption neon-border">
-                            <p>Bisa buat Toss pertandingan olahraga, main yu-gi-oh!, dan ritual per-gachaan lainnya.</p>
-                            <p> <b>Pliss jangan buat judi !!</b></p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="bio">
-                <aside>
-                    <span class="anchor" id="about-us"></span>
-
-                    <h2>Yang Bikin</h2>
-                    <div class="photo ">
-                        <img class="neon-border" src="assets/image/pp.png" alt="siraj" width="50%" height="auto">
-                    </div>
-                    <div class="caption neon-border">
-                        <p>Siraj Shalahuddin</p>
-                        <p>Bangkit Academy Student</p>
-                    </div>
-
-                </aside>
-            </div>
-        </div>
-    </main>
-    <footer class="neon-border">
-        <p>Siraj Shalahuddin 2022</p>
-    </footer>
-    <script src="assets/script/script.js"></script>
+<p align="center">
+<font size="8">
+<b>LED 1 = &nbsp <a
+href="https://api.thingspeak.com/update?api_key=2CUE5PSPEWWV8VYJ&field1=1">ON
+</a></b> / <b><a
+href="https://api.thingspeak.com/update?api_key=2CUE5PSPEWWV8VYJ&field1=0">OFF</a><
+/
+b> <br>
+<b>LED 2 = &nbsp <a href="https://api.thingspeak.com/update?api_key=2CUE5PSPEWWV8VYJ
+&field2=1">ON </a></b> /
+<b><a
+href="https://api.thingspeak.com/update?api_key=2CUE5PSPEWWV8VYJ&field2=0">OFF</a><
+/
+b> <br>
+</font>
+</p>
 </body>
-
 </html>
