@@ -27,6 +27,11 @@ form:hover {
   opacity: 1;
 }
 
+form.focused,
+input:focus {
+  opacity: 1;
+}
+
 label {
   font-weight: bold;
   color: #FFFFFF;

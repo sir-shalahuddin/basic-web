@@ -50,3 +50,16 @@ function validateEmail(email) {
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
+
+const form = document.getElementById('myForm');
+const inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {
+  input.addEventListener('focus', () => {
+    form.classList.add('focused');
+  });
+
+  input.addEventListener('blur', () => {
+    form.classList.remove('focused');
+  });
+});
