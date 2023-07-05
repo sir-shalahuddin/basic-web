@@ -15,7 +15,7 @@ body {
 }
 
 form {
-  max-width: 300px;
+  width: 300px
   padding: 20px;
   background-color: #11698E;
   border-radius: 5px;
