@@ -1,24 +1,21 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>LED ON/OFF</title>
+  <title>Form Validation</title>
+  <link rel="stylesheet" type="text/css" href="./assets/style/style.css">
 </head>
-
 <body>
-<p align="center">
-<font size="8">
-<b>LED 1 = &nbsp <a
-href="https://api.thingspeak.com/update?api_key=2CUE5PSPEWWV8VYJ&field1=1">ON
-</a></b> / <b><a
-href="https://api.thingspeak.com/update?api_key=2CUE5PSPEWWV8VYJ&field1=0">OFF</a><
-/
-b> <br>
-<b>LED 2 = &nbsp <a href="https://api.thingspeak.com/update?api_key=2CUE5PSPEWWV8VYJ
-&field2=1">ON </a></b> /
-<b><a
-href="https://api.thingspeak.com/update?api_key=2CUE5PSPEWWV8VYJ&field2=0">OFF</a><
-/
-b> <br>
-</font>
-</p>
+  <form onsubmit="return validateForm()">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <input type="submit" value="Submit">
+    <div id="error-message" class="error"></div>
+  </form>
+
+  <script src="./assets/script/script.js"></script>
 </body>
 </html>
