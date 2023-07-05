@@ -1,47 +1,52 @@
-let i = 0;
-let max = 40;
-let numberDice = 1;
-let numberCoin = 1;
+function validateForm() {
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  var errorDiv = document.getElementById("error-message");
 
-function roll(n) {
-    setTimeout(function animation() {
-        rollAnimation(n);
-        i++;
-        if (i < max) roll(n);
-        else i = 0;
-    }, 100)
+  errorDiv.innerHTML = "";
+
+  if (email === "" || password === "") {
+    errorDiv.innerHTML = "Both fields are required.";
+    return false;
+  }
+
+  if (!validateEmail(email)) {
+    errorDiv.innerHTML = "Please enter a valid email address.";
+    return false;
+  }
+
+  if (password.length < 6) {
+    errorDiv.innerHTML = "Password should be at least 6 characters long.";
+    return false;
+  }
+
+  // Common rules validation
+  if (password.toLowerCase() === password) {
+    errorDiv.innerHTML = "Password should contain at least one uppercase letter.";
+    return false;
+  }
+
+  if (password.toUpperCase() === password) {
+    errorDiv.innerHTML = "Password should contain at least one lowercase letter.";
+    return false;
+  }
+
+  if (!/\d/.test(password)) {
+    errorDiv.innerHTML = "Password should contain at least one digit.";
+    return false;
+  }
+
+  if (!/[!@#$%^&*]/.test(password)) {
+    errorDiv.innerHTML = "Password should contain at least one special character (!@#$%^&*).";
+    return false;
+  }
+
+  // If all validations pass, the form is valid
+  alert("Form is valid!");
+  return true;
 }
 
-function rollAnimation(n) {
-    if (n == 'dice') {
-        for (let j = 1; j <= numberDice; j++) {
-            let diceImage = document.getElementById(`dices${j}`);
-            let number = 1 + (Math.floor(Math.random() * 6));
-            diceImage.setAttribute("src", `assets/image/dice${number}.png`)
-        }
-    } else if (n == 'coin') {
-        for (let j = 1; j <= numberCoin; j++) {
-            let coinImage = document.getElementById(`coins${j}`);
-            let number = 1 + (Math.floor(Math.random() * 2));
-            coinImage.setAttribute("src", `assets/image/coin${number}.png`)
-        }
-    }
-}
-
-function add(n) {
-    if ((numberDice == 3 && n == 'dice') || (numberCoin == 3 && n == 'coin')) {
-        alert('3 aja bro jangan kebanyakan');
-    } else {
-        const node = document.createElement("img");
-        node.setAttribute("src", `assets/image/${n}1.png`);
-        node.setAttribute("class", "responsive-img");
-        if (n == 'dice') {
-            node.setAttribute("id", `${n}s${numberDice + 1}`);
-            numberDice++;
-        } else if (n == 'coin') {
-            node.setAttribute("id", `${n}s${numberCoin + 1}`);
-            numberCoin++;
-        }
-        document.getElementById(`${n}-box`).appendChild(node);
-    }
+function validateEmail(email) {
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
